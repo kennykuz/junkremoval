@@ -1,8 +1,8 @@
 // ClearSpace Junk Removal — site interactions
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Mobile nav toggle (supports both the original nav and the v2 redesign nav)
-  [['.nav-toggle', '.nav-links'], ['.v2-nav-toggle', '.v2-nav-links']].forEach(([toggleSel, linksSel]) => {
+  // Mobile nav toggle (supports both the original nav and the editorial redesign nav)
+  [['.nav-toggle', '.nav-links'], ['.ed-nav-toggle', '.ed-nav-links']].forEach(([toggleSel, linksSel]) => {
     const navToggle = document.querySelector(toggleSel);
     const navLinks = document.querySelector(linksSel);
     if (navToggle && navLinks) {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Highlight active nav link based on current page (original nav only —
-  // the v2 redesign nav sets its active link directly in the markup)
+  // the editorial redesign nav sets its active link directly in the markup)
   const current = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(a => {
     const href = a.getAttribute('href');
@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // FAQ accordion (supports both the original .faq-* and v2 .v2-faq-* markup)
+  // FAQ accordion (supports both the original .faq-* and editorial .ed-faq-* markup)
   [
     { item: '.faq-item', group: '.faq', q: '.faq-q', a: '.faq-a' },
-    { item: '.v2-faq-item', group: '.v2-faq', q: '.v2-faq-q', a: '.v2-faq-a' },
+    { item: '.ed-faq-item', group: '.ed-faq', q: '.ed-faq-q', a: '.ed-faq-a' },
   ].forEach(({ item: itemSel, group: groupSel, q: qSel, a: aSel }) => {
     document.querySelectorAll(itemSel).forEach(item => {
       const q = item.querySelector(qSel);
@@ -92,24 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
         success.classList.add('show');
         success.scrollIntoView({ behavior: 'smooth', block: 'center' });
         setTimeout(() => success.classList.remove('show'), 7000);
-      }
-    });
-  }
-
-  // Mini request-a-service form (v2 homepage banner)
-  const miniForm = document.querySelector('#mini-quote-form');
-  if (miniForm) {
-    miniForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (!miniForm.checkValidity()) {
-        miniForm.reportValidity();
-        return;
-      }
-      const success = document.querySelector('#mini-form-success');
-      miniForm.reset();
-      if (success) {
-        success.style.display = 'block';
-        setTimeout(() => { success.style.display = 'none'; }, 7000);
       }
     });
   }
