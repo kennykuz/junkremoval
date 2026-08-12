@@ -672,3 +672,82 @@ body.ed .mobile-call-bar{background:var(--ed-ink);border-top:1.5px solid var(--e
 body.ed .mobile-call-bar svg{color:var(--ed-rust)}
 body.ed .back-top{background:var(--ed-ink);border:1.5px solid var(--ed-paper)}
 body.ed .back-top:hover{background:var(--ed-rust);border-color:var(--ed-rust)}
+
+/* Inner-page hero (smaller than the homepage split hero) */
+.ed-page-hero{border-bottom:1.5px solid var(--ed-ink);padding:56px 0}
+.ed-page-hero .crumb{font-size:.85rem;color:var(--ed-ink-soft);margin-bottom:22px}
+.ed-page-hero .crumb a{border-bottom:1px solid var(--ed-line)}
+.ed-page-hero .crumb a:hover{color:var(--ed-rust);border-color:var(--ed-rust)}
+.ed-page-hero h1{font-size:clamp(2.6rem,6vw,4.6rem);max-width:900px}
+.ed-page-hero .lead{margin-top:20px;font-size:1.15rem;max-width:620px}
+.ed-page-hero .cta{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap}
+
+/* Expanded service detail rows (services.html) */
+.ed-service-detail{border-top:1px solid var(--ed-line)}
+.ed-service-detail-row{padding:48px 0;border-bottom:1px solid var(--ed-line);display:grid;grid-template-columns:230px 1fr;gap:32px}
+@media(max-width:760px){.ed-service-detail-row{grid-template-columns:1fr;gap:14px}}
+.ed-service-detail-row .label{display:flex;gap:14px}
+.ed-service-detail-row .label .num{font-family:var(--ed-display);font-size:1.2rem;color:var(--ed-line);flex-shrink:0}
+.ed-service-detail-row .label h2{font-size:1.7rem}
+.ed-service-detail-row .body p{max-width:640px}
+.ed-service-detail-row .body ul{display:grid;grid-template-columns:1fr 1fr;gap:9px 24px;margin:20px 0 26px;list-style:none}
+@media(max-width:500px){.ed-service-detail-row .body ul{grid-template-columns:1fr}}
+.ed-service-detail-row .body ul li{font-size:.92rem;color:var(--ed-ink-soft)}
+.ed-service-detail-row .body ul li::before{content:"—";margin-right:8px;color:var(--ed-rust)}
+
+/* List rows without the trailing arrow column (values, etc.) */
+.ed-service-row.no-arrow{grid-template-columns:60px 1fr 1.4fr}
+@media(max-width:760px){.ed-service-row.no-arrow{grid-template-columns:36px 1fr}.ed-service-row.no-arrow .ed-service-desc{display:block;grid-column:2}}
+
+/* Team list (about.html) */
+.ed-team-list{border-top:1px solid var(--ed-line)}
+.ed-team-row{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 0;border-bottom:1px solid var(--ed-line);flex-wrap:wrap}
+.ed-team-row .name{font-family:var(--ed-display);font-size:1.5rem}
+.ed-team-row .role{font-size:.9rem;color:var(--ed-rust);font-weight:600}
+
+/* Pricing comparison (pricing.html — replaces rounded cards) */
+.ed-pricing-compare{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ed-line)}
+@media(max-width:860px){.ed-pricing-compare{grid-template-columns:1fr}}
+.ed-pricing-compare>div{padding:36px 32px 32px 0;border-right:1px solid var(--ed-line)}
+.ed-pricing-compare>div:last-child{border-right:none}
+@media(max-width:860px){.ed-pricing-compare>div{border-right:none;border-bottom:1px solid var(--ed-line);padding:32px 0}}
+.ed-pricing-compare .tag{font-family:var(--ed-display);font-size:.85rem;color:var(--ed-rust);letter-spacing:.05em;display:block;margin-bottom:10px}
+.ed-pricing-compare h3{font-size:1.3rem}
+.ed-pricing-compare .amount{font-family:var(--ed-display);font-size:2.6rem;margin:14px 0}
+.ed-pricing-compare .amount span{font-size:1rem;font-family:var(--ed-body);color:var(--ed-ink-soft)}
+.ed-pricing-compare ul{margin:20px 0 26px;display:grid;gap:10px;list-style:none}
+.ed-pricing-compare ul li{font-size:.9rem;color:var(--ed-ink-soft)}
+.ed-pricing-compare ul li::before{content:"—";margin-right:8px;color:var(--ed-rust)}
+
+/* Volume estimator (pricing.html) */
+.ed-estimator{border-top:1.5px solid var(--ed-ink);border-bottom:1.5px solid var(--ed-ink);padding:40px 0}
+.ed-estimator input[type=range]{width:100%;accent-color:var(--ed-rust);height:2px}
+.ed-estimator-row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:26px;gap:16px;flex-wrap:wrap}
+.ed-estimator-row .label{font-family:var(--ed-display);font-size:1.2rem}
+.ed-estimator-row .sub{font-size:.85rem;color:var(--ed-ink-soft);margin-top:4px}
+.ed-estimator-row .amount{font-family:var(--ed-display);font-size:2.2rem;color:var(--ed-rust)}
+
+/* Contact page */
+.ed-contact-grid{display:grid;grid-template-columns:.9fr 1.4fr;border-top:1.5px solid var(--ed-ink)}
+@media(max-width:860px){.ed-contact-grid{grid-template-columns:1fr}}
+.ed-contact-panel{background:var(--ed-ink);color:var(--ed-paper);padding:52px 44px}
+.ed-contact-panel h3{color:var(--ed-paper);font-size:1.3rem;margin-bottom:8px}
+.ed-contact-panel ul{border-top:1px solid var(--ed-line-on-ink);margin-top:24px;list-style:none}
+.ed-contact-panel li{padding:18px 0;border-bottom:1px solid var(--ed-line-on-ink)}
+.ed-contact-panel li b{display:block;font-family:var(--ed-display);font-size:.9rem;letter-spacing:.03em;margin-bottom:4px;color:#a9a69d}
+.ed-contact-panel li a{color:var(--ed-paper)}
+.ed-contact-panel li a:hover{color:var(--ed-rust)}
+.ed-form-wrap{padding:52px 44px;border-left:1px solid var(--ed-ink)}
+@media(max-width:860px){.ed-form-wrap{border-left:none;border-top:1px solid var(--ed-ink)}}
+.ed-form-row{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px}
+@media(max-width:560px){.ed-form-row{grid-template-columns:1fr;gap:0}}
+.ed-field{display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.ed-field label{font-family:var(--ed-display);font-size:.9rem;letter-spacing:.03em;color:var(--ed-ink-soft)}
+.ed-field input,.ed-field select,.ed-field textarea{
+  border:none;border-bottom:1.5px solid var(--ed-line);background:transparent;padding:10px 2px;
+  font-family:var(--ed-body);font-size:1rem;color:var(--ed-ink);width:100%;
+}
+.ed-field input:focus,.ed-field select:focus,.ed-field textarea:focus{outline:none;border-color:var(--ed-rust)}
+.ed-field textarea{resize:vertical;min-height:90px}
+.ed-form-success{display:none;align-items:center;gap:12px;border:1.5px solid var(--ed-ink);padding:16px 18px;margin-bottom:30px;font-weight:600;font-size:.92rem}
+.ed-form-success.show{display:flex}

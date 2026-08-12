@@ -9,296 +9,257 @@
 <link rel="stylesheet" href="css/style.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body>
+<body class="ed">
 
 <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
 <defs>
-<symbol id="icon-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
-<symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
-<symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></symbol>
-<symbol id="icon-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-<symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-<symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
-<symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 4 13c0-6 7-11 15-11 0 8-3 15-11 15z"/><path d="M4 13c4 0 8 2 8 8"/></symbol>
-<symbol id="icon-star" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
-<symbol id="icon-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></symbol>
-<symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
 <symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></symbol>
-<symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></symbol>
-<symbol id="icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
-<symbol id="icon-sofa" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6"/><path d="M2 13h20v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/><path d="M4 19v2"/><path d="M20 19v2"/></symbol>
-<symbol id="icon-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></symbol>
-<symbol id="icon-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 6h1M14 6h1M9 10h1M14 10h1M9 14h1M14 14h1M9 22v-4h6v4"/></symbol>
-<symbol id="icon-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94z"/></symbol>
-<symbol id="icon-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></symbol>
-<symbol id="icon-garage" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-6 9 6"/><path d="M5 10v10h14V10"/><rect x="9" y="14" width="6" height="6"/></symbol>
-<symbol id="icon-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
-<symbol id="icon-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"/></symbol>
-<symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
-<symbol id="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
-<symbol id="icon-facebook" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
-<symbol id="icon-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></symbol>
-<symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></symbol>
-<symbol id="icon-recycle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5"/><path d="M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12"/><path d="M14.5 4.5L18 9l-3.5 4.5"/><path d="M9.5 4.5H12"/><path d="M13 19l-2.5 3-2.5-3"/></symbol>
+<symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
 </defs>
 </svg>
 
-<div class="topbar">
-  <div class="container">
-    <div class="topbar-left">
-      <a href="mailto:hello@clearspacejunk.ca"><svg><use href="#icon-mail"/></svg> hello@clearspacejunk.ca</a>
-      <span><svg style="width:14px;height:14px;display:inline;vertical-align:-2px"><use href="#icon-map-pin"/></svg> Serving the Greater Toronto Area</span>
-    </div>
-    <div class="topbar-right">
-      <span><svg style="width:14px;height:14px;display:inline;vertical-align:-2px"><use href="#icon-clock"/></svg> Mon–Sat 7am–8pm</span>
-    </div>
-  </div>
-</div>
-
-<header class="site-header">
-  <nav class="nav container">
-    <a href="index.html" class="brand">
-      <span class="brand-mark"><svg><use href="#icon-truck"/></svg></span>
-      Clear<span>Space</span>
-    </a>
-    <div class="nav-links">
+<header class="ed-header">
+  <div class="ed-header-inner">
+    <a href="index.html" class="ed-wordmark">CLEARSPACE<span class="dot">.</span></a>
+    <nav class="ed-nav-links">
       <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
+      <a href="services.html" class="active">Services</a>
       <a href="pricing.html">Pricing</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+    </nav>
+    <div class="ed-nav-right">
+      <a href="tel:14165550199" class="ed-nav-phone">(416) 555-0199</a>
+      <a href="contact.html" class="ed-btn ed-btn-fill">Get A Quote <svg><use href="#icon-arrow-right"/></svg></a>
+      <button class="ed-nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
-    <div class="nav-cta">
-      <a href="tel:14165550199" class="nav-phone"><svg><use href="#icon-phone"/></svg> <span>(416) 555-0199</span></a>
-      <a href="contact.html" class="btn btn-primary">Get Free Quote</a>
-      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
+  </div>
 </header>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="index.html">Home</a> / Services</div>
-    <h1>Junk removal services for every situation</h1>
-    <p>Point at what you want gone — our crew handles the lifting, loading, sorting and disposal. Browse services below or call for a free estimate.</p>
-    <div class="hero-cta" style="margin-top:28px">
-      <a href="contact.html" class="btn btn-primary btn-lg">Get a Free Quote</a>
-      <a href="tel:14165550199" class="btn btn-outline btn-lg"><svg><use href="#icon-phone"/></svg> Call (416) 555-0199</a>
+<section class="ed-page-hero">
+  <div class="ed-wrap">
+    <div class="crumb"><a href="index.html">Home</a> / Services</div>
+    <h1>Everything we haul, and what we don't.</h1>
+    <p class="lead">Point at what you want gone — we handle the lifting, loading, sorting, and disposal. Eight categories below cover most of what we're called for; if yours isn't listed, call anyway.</p>
+    <div class="cta">
+      <a href="contact.html" class="ed-btn ed-btn-ink">Get A Free Quote <svg><use href="#icon-arrow-right"/></svg></a>
+      <a href="tel:14165550199" class="ed-btn">Call (416) 555-0199</a>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="container">
+<section class="ed-section">
+  <div class="ed-wrap">
+    <div class="ed-service-detail">
 
-    <div class="service-row" id="residential">
-      <div class="service-visual"><svg><use href="#icon-home"/></svg></div>
-      <div class="service-text">
-        <span class="eyebrow">Residential</span>
-        <h2>Residential Junk Removal</h2>
-        <p>Clutter builds up — old furniture, broken appliances, boxes from a move, or just years of stuff you no longer need. We clear it out in a single visit, no heavy lifting required on your end.</p>
-        <ul>
-          <li><svg><use href="#icon-check"/></svg> Furniture &amp; mattresses</li>
-          <li><svg><use href="#icon-check"/></svg> Old appliances</li>
-          <li><svg><use href="#icon-check"/></svg> General household clutter</li>
-          <li><svg><use href="#icon-check"/></svg> Electronics &amp; e-waste</li>
-          <li><svg><use href="#icon-check"/></svg> Moving-day leftovers</li>
-          <li><svg><use href="#icon-check"/></svg> Attic &amp; closet cleanouts</li>
-        </ul>
-        <a href="contact.html" class="btn btn-dark">Book Residential Pickup <svg><use href="#icon-arrow-right"/></svg></a>
+      <div class="ed-service-detail-row" id="residential">
+        <div class="label">
+          <span class="num">01</span>
+          <h2>Residential</h2>
+        </div>
+        <div class="body reveal">
+          <p>Clutter builds up — old furniture, broken appliances, boxes from a move, or just years of stuff you no longer need. We clear it out in a single visit, no heavy lifting required on your end.</p>
+          <ul>
+            <li>Furniture &amp; mattresses</li>
+            <li>Old appliances</li>
+            <li>General household clutter</li>
+            <li>Electronics &amp; e-waste</li>
+            <li>Moving-day leftovers</li>
+            <li>Attic &amp; closet cleanouts</li>
+          </ul>
+          <a href="contact.html" class="ed-text-link">Book residential pickup <svg><use href="#icon-arrow-right"/></svg></a>
+        </div>
       </div>
-    </div>
 
-    <div class="service-row reverse" id="commercial">
-      <div class="service-visual"><svg><use href="#icon-briefcase"/></svg></div>
-      <div class="service-text">
-        <span class="eyebrow">Commercial</span>
-        <h2>Commercial Junk Removal</h2>
-        <p>Minimize downtime with scheduled or on-demand pickups for offices, retail stores, restaurants, and job sites. We work around your business hours and can set up recurring service.</p>
-        <ul>
-          <li><svg><use href="#icon-check"/></svg> Office furniture &amp; equipment</li>
-          <li><svg><use href="#icon-check"/></svg> Retail fixture removal</li>
-          <li><svg><use href="#icon-check"/></svg> Warehouse &amp; pallet cleanup</li>
-          <li><svg><use href="#icon-check"/></svg> Property management turnovers</li>
-          <li><svg><use href="#icon-check"/></svg> Recurring waste pickups</li>
-          <li><svg><use href="#icon-check"/></svg> After-hours scheduling</li>
-        </ul>
-        <a href="contact.html" class="btn btn-dark">Request Commercial Quote <svg><use href="#icon-arrow-right"/></svg></a>
+      <div class="ed-service-detail-row" id="commercial">
+        <div class="label">
+          <span class="num">02</span>
+          <h2>Commercial</h2>
+        </div>
+        <div class="body reveal">
+          <p>Minimize downtime with scheduled or on-demand pickups for offices, retail stores, restaurants, and job sites. We work around your business hours and can set up recurring service.</p>
+          <ul>
+            <li>Office furniture &amp; equipment</li>
+            <li>Retail fixture removal</li>
+            <li>Warehouse &amp; pallet cleanup</li>
+            <li>Property management turnovers</li>
+            <li>Recurring waste pickups</li>
+            <li>After-hours scheduling</li>
+          </ul>
+          <a href="contact.html" class="ed-text-link">Request a commercial quote <svg><use href="#icon-arrow-right"/></svg></a>
+        </div>
       </div>
-    </div>
 
-    <div class="service-row" id="furniture">
-      <div class="service-visual"><svg><use href="#icon-sofa"/></svg></div>
-      <div class="service-text">
-        <span class="eyebrow">Furniture &amp; Appliances</span>
-        <h2>Furniture &amp; Appliance Removal</h2>
-        <p>Heavy, awkward, or just plain stuck in a basement — we've moved it all. Our crews come equipped with dollies, straps, and the manpower to handle bulky items safely.</p>
-        <ul>
-          <li><svg><use href="#icon-check"/></svg> Couches &amp; sectionals</li>
-          <li><svg><use href="#icon-check"/></svg> Mattresses &amp; box springs</li>
-          <li><svg><use href="#icon-check"/></svg> Refrigerators &amp; freezers</li>
-          <li><svg><use href="#icon-check"/></svg> Washers &amp; dryers</li>
-          <li><svg><use href="#icon-check"/></svg> Pianos &amp; large cabinets</li>
-          <li><svg><use href="#icon-check"/></svg> Treadmills &amp; gym equipment</li>
-        </ul>
-        <a href="contact.html" class="btn btn-dark">Schedule a Pickup <svg><use href="#icon-arrow-right"/></svg></a>
+      <div class="ed-service-detail-row" id="furniture">
+        <div class="label">
+          <span class="num">03</span>
+          <h2>Furniture &amp; Appliances</h2>
+        </div>
+        <div class="body reveal">
+          <p>Heavy, awkward, or just plain stuck in a basement — we've moved it all. Our crews come equipped with dollies, straps, and the manpower to handle bulky items safely.</p>
+          <ul>
+            <li>Couches &amp; sectionals</li>
+            <li>Mattresses &amp; box springs</li>
+            <li>Refrigerators &amp; freezers</li>
+            <li>Washers &amp; dryers</li>
+            <li>Pianos &amp; large cabinets</li>
+            <li>Treadmills &amp; gym equipment</li>
+          </ul>
+          <a href="contact.html" class="ed-text-link">Schedule a pickup <svg><use href="#icon-arrow-right"/></svg></a>
+        </div>
       </div>
-    </div>
 
-    <div class="service-row reverse" id="estate">
-      <div class="service-visual"><svg><use href="#icon-building"/></svg></div>
-      <div class="service-text">
-        <span class="eyebrow">Estate &amp; Hoarding</span>
-        <h2>Estate &amp; Hoarding Cleanouts</h2>
-        <p>These jobs call for patience and discretion, not just muscle. Our team works respectfully and at your pace, setting aside keepsakes and donation-worthy items along the way.</p>
-        <ul>
-          <li><svg><use href="#icon-check"/></svg> Full estate cleanouts</li>
-          <li><svg><use href="#icon-check"/></svg> Hoarding situations</li>
-          <li><svg><use href="#icon-check"/></svg> Foreclosure cleanups</li>
-          <li><svg><use href="#icon-check"/></svg> Downsizing support</li>
-          <li><svg><use href="#icon-check"/></svg> Donation sorting</li>
-          <li><svg><use href="#icon-check"/></svg> Discreet, judgment-free crews</li>
-        </ul>
-        <a href="contact.html" class="btn btn-dark">Talk to Our Team <svg><use href="#icon-arrow-right"/></svg></a>
+      <div class="ed-service-detail-row" id="estate">
+        <div class="label">
+          <span class="num">04</span>
+          <h2>Estate &amp; Hoarding</h2>
+        </div>
+        <div class="body reveal">
+          <p>These jobs call for patience and discretion, not just muscle. Our team works respectfully and at your pace, setting aside keepsakes and donation-worthy items along the way.</p>
+          <ul>
+            <li>Full estate cleanouts</li>
+            <li>Hoarding situations</li>
+            <li>Foreclosure cleanups</li>
+            <li>Downsizing support</li>
+            <li>Donation sorting</li>
+            <li>Discreet, judgment-free crews</li>
+          </ul>
+          <a href="contact.html" class="ed-text-link">Talk to our team <svg><use href="#icon-arrow-right"/></svg></a>
+        </div>
       </div>
-    </div>
 
-    <div class="service-row" id="construction">
-      <div class="service-visual"><svg><use href="#icon-tool"/></svg></div>
-      <div class="service-text">
-        <span class="eyebrow">Construction &amp; Renovation</span>
-        <h2>Construction &amp; Reno Debris</h2>
-        <p>Keep your renovation on schedule. We handle drywall, flooring, cabinetry, and general job-site debris — with flexible pickups that fit around your contractor's timeline.</p>
-        <ul>
-          <li><svg><use href="#icon-check"/></svg> Drywall &amp; lumber scraps</li>
-          <li><svg><use href="#icon-check"/></svg> Old flooring &amp; cabinetry</li>
-          <li><svg><use href="#icon-check"/></svg> Fixtures &amp; tile</li>
-          <li><svg><use href="#icon-check"/></svg> Roofing shingles</li>
-          <li><svg><use href="#icon-check"/></svg> Doors &amp; windows</li>
-          <li><svg><use href="#icon-check"/></svg> Post-demo cleanup</li>
-        </ul>
-        <a href="contact.html" class="btn btn-dark">Get a Job-Site Quote <svg><use href="#icon-arrow-right"/></svg></a>
+      <div class="ed-service-detail-row" id="construction">
+        <div class="label">
+          <span class="num">05</span>
+          <h2>Construction Debris</h2>
+        </div>
+        <div class="body reveal">
+          <p>Keep your renovation on schedule. We handle drywall, flooring, cabinetry, and general job-site debris — with flexible pickups that fit around your contractor's timeline.</p>
+          <ul>
+            <li>Drywall &amp; lumber scraps</li>
+            <li>Old flooring &amp; cabinetry</li>
+            <li>Fixtures &amp; tile</li>
+            <li>Roofing shingles</li>
+            <li>Doors &amp; windows</li>
+            <li>Post-demo cleanup</li>
+          </ul>
+          <a href="contact.html" class="ed-text-link">Get a job-site quote <svg><use href="#icon-arrow-right"/></svg></a>
+        </div>
       </div>
-    </div>
 
-    <div class="service-row reverse" id="yard">
-      <div class="service-visual"><svg><use href="#icon-leaf"/></svg></div>
-      <div class="service-text">
-        <span class="eyebrow">Yard &amp; Garden</span>
-        <h2>Yard &amp; Garden Waste Removal</h2>
-        <p>From storm cleanup to a full landscaping overhaul, we haul away green waste and old structures so your yard is ready for what's next.</p>
-        <ul>
-          <li><svg><use href="#icon-check"/></svg> Branches &amp; brush</li>
-          <li><svg><use href="#icon-check"/></svg> Soil &amp; sod</li>
-          <li><svg><use href="#icon-check"/></svg> Old sheds &amp; fencing</li>
-          <li><svg><use href="#icon-check"/></svg> Patio furniture</li>
-          <li><svg><use href="#icon-check"/></svg> Storm debris</li>
-          <li><svg><use href="#icon-check"/></svg> Playground equipment</li>
-        </ul>
-        <a href="contact.html" class="btn btn-dark">Book Yard Cleanup <svg><use href="#icon-arrow-right"/></svg></a>
+      <div class="ed-service-detail-row" id="yard">
+        <div class="label">
+          <span class="num">06</span>
+          <h2>Yard &amp; Garden</h2>
+        </div>
+        <div class="body reveal">
+          <p>From storm cleanup to a full landscaping overhaul, we haul away green waste and old structures so your yard is ready for what's next.</p>
+          <ul>
+            <li>Branches &amp; brush</li>
+            <li>Soil &amp; sod</li>
+            <li>Old sheds &amp; fencing</li>
+            <li>Patio furniture</li>
+            <li>Storm debris</li>
+            <li>Playground equipment</li>
+          </ul>
+          <a href="contact.html" class="ed-text-link">Book a yard cleanup <svg><use href="#icon-arrow-right"/></svg></a>
+        </div>
       </div>
-    </div>
 
-    <div class="service-row" id="garage">
-      <div class="service-visual"><svg><use href="#icon-garage"/></svg></div>
-      <div class="service-text">
-        <span class="eyebrow">Garage &amp; Basement</span>
-        <h2>Garage &amp; Basement Cleanouts</h2>
-        <p>Reclaim storage space that's been lost to clutter for years. We sort through it with you, haul away what's not needed, and sweep up before we leave.</p>
-        <ul>
-          <li><svg><use href="#icon-check"/></svg> Tools &amp; equipment</li>
-          <li><svg><use href="#icon-check"/></svg> Old paint &amp; chemical disposal guidance</li>
-          <li><svg><use href="#icon-check"/></svg> Storage bins &amp; shelving</li>
-          <li><svg><use href="#icon-check"/></svg> Sports &amp; camping gear</li>
-          <li><svg><use href="#icon-check"/></svg> Holiday decorations</li>
-          <li><svg><use href="#icon-check"/></svg> Full sweep-out included</li>
-        </ul>
-        <a href="contact.html" class="btn btn-dark">Reclaim Your Space <svg><use href="#icon-arrow-right"/></svg></a>
+      <div class="ed-service-detail-row" id="garage">
+        <div class="label">
+          <span class="num">07</span>
+          <h2>Garage &amp; Basement</h2>
+        </div>
+        <div class="body reveal">
+          <p>Reclaim storage space that's been lost to clutter for years. We sort through it with you, haul away what's not needed, and sweep up before we leave.</p>
+          <ul>
+            <li>Tools &amp; equipment</li>
+            <li>Old paint &amp; chemical disposal guidance</li>
+            <li>Storage bins &amp; shelving</li>
+            <li>Sports &amp; camping gear</li>
+            <li>Holiday decorations</li>
+            <li>Full sweep-out included</li>
+          </ul>
+          <a href="contact.html" class="ed-text-link">Reclaim your space <svg><use href="#icon-arrow-right"/></svg></a>
+        </div>
       </div>
-    </div>
 
-    <div class="service-row reverse" id="single-item">
-      <div class="service-visual"><svg><use href="#icon-trash"/></svg></div>
-      <div class="service-text">
-        <span class="eyebrow">Single Items</span>
-        <h2>General Junk &amp; Single-Item Pickups</h2>
-        <p>Don't need a full truckload? No problem. We run single-item pickups every day — no minimums, no judgment, just fast, affordable hauling.</p>
-        <ul>
-          <li><svg><use href="#icon-check"/></svg> One-off furniture pickups</li>
-          <li><svg><use href="#icon-check"/></svg> Curbside collection</li>
-          <li><svg><use href="#icon-check"/></svg> TVs &amp; electronics</li>
-          <li><svg><use href="#icon-check"/></svg> Hot tubs &amp; large items</li>
-          <li><svg><use href="#icon-check"/></svg> Tires &amp; scrap metal</li>
-          <li><svg><use href="#icon-check"/></svg> Same-day availability</li>
-        </ul>
-        <a href="contact.html" class="btn btn-dark">Book a Single Pickup <svg><use href="#icon-arrow-right"/></svg></a>
+      <div class="ed-service-detail-row" id="single-item">
+        <div class="label">
+          <span class="num">08</span>
+          <h2>Single Items</h2>
+        </div>
+        <div class="body reveal">
+          <p>Don't need a full truckload? No problem. We run single-item pickups every day — no minimums, no judgment, just fast, affordable hauling.</p>
+          <ul>
+            <li>One-off furniture pickups</li>
+            <li>Curbside collection</li>
+            <li>TVs &amp; electronics</li>
+            <li>Hot tubs &amp; large items</li>
+            <li>Tires &amp; scrap metal</li>
+            <li>Same-day availability</li>
+          </ul>
+          <a href="contact.html" class="ed-text-link">Book a single pickup <svg><use href="#icon-arrow-right"/></svg></a>
+        </div>
       </div>
-    </div>
 
-  </div>
-</section>
-
-<section class="alt">
-  <div class="container">
-    <div class="cta-banner reveal">
-      <div>
-        <h2>Not sure which service you need?</h2>
-        <p>Tell us what's going on — we'll figure out the right approach and give you a free quote.</p>
-      </div>
-      <div style="display:flex;gap:14px;flex-wrap:wrap">
-        <a href="contact.html" class="btn btn-primary btn-lg">Get a Free Quote</a>
-        <a href="tel:14165550199" class="btn btn-outline btn-lg"><svg><use href="#icon-phone"/></svg> (416) 555-0199</a>
-      </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="brand"><span class="brand-mark"><svg><use href="#icon-truck"/></svg></span>Clear<span style="color:var(--color-accent)">Space</span></a>
-        <p>Fast, friendly, eco-conscious junk removal serving homes and businesses across the Greater Toronto Area since 2014.</p>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"/></svg></a>
-          <a href="#" aria-label="X"><svg><use href="#icon-x"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="about.html">About Us</a>
-          <a href="contact.html">Contact</a>
-        </div>
-      </div>
-      <div>
-        <h4>Services</h4>
-        <div class="footer-links">
-          <a href="services.html#residential">Residential Removal</a>
-          <a href="services.html#commercial">Commercial Removal</a>
-          <a href="services.html#estate">Estate Cleanouts</a>
-          <a href="services.html#construction">Construction Debris</a>
-          <a href="services.html#yard">Yard Waste</a>
-        </div>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul class="footer-contact">
-          <li><svg><use href="#icon-phone"/></svg> <a href="tel:14165550199">(416) 555-0199</a></li>
-          <li><svg><use href="#icon-mail"/></svg> <a href="mailto:hello@clearspacejunk.ca">hello@clearspacejunk.ca</a></li>
-          <li><svg><use href="#icon-map-pin"/></svg> 128 Bayview Ave, Toronto, ON M5A 3R2</li>
-          <li><svg><use href="#icon-clock"/></svg> Mon–Sat: 7am–8pm, Sun: 9am–5pm</li>
-        </ul>
+<section class="ed-section" style="background:var(--ed-rust);color:var(--ed-white)">
+  <div class="ed-wrap ed-cta">
+    <h2 style="color:var(--ed-white)">Not sure which<br>one you need?</h2>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
+      <a href="contact.html" class="ed-btn" style="background:var(--ed-white);border-color:var(--ed-white);color:var(--ed-rust)">Get A Free Quote <svg><use href="#icon-arrow-right"/></svg></a>
+      <a href="tel:14165550199" class="ed-btn ed-btn-outline-paper" style="color:var(--ed-white)">Call (416) 555-0199</a>
+    </div>
+  </div>
+</section>
+
+<footer class="ed-footer">
+  <div class="ed-wrap ed-footer-grid">
+    <div class="ed-footer-brand">
+      <a href="index.html" class="ed-wordmark">CLEARSPACE<span class="dot">.</span></a>
+      <p>Junk removal for homes and businesses across the Greater Toronto Area, on the road since 2014.</p>
+      <div class="ed-footer-social">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© <span class="current-year">2026</span> ClearSpace Junk Removal. All rights reserved.</span>
-      <span>Licensed &amp; Insured · WSIB Covered</span>
+    <div>
+      <h4>Site</h4>
+      <div class="ed-footer-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </div>
+    <div>
+      <h4>Services</h4>
+      <div class="ed-footer-links">
+        <a href="services.html#residential">Residential</a>
+        <a href="services.html#commercial">Commercial</a>
+        <a href="services.html#estate">Estate Cleanouts</a>
+        <a href="services.html#construction">Construction Debris</a>
+      </div>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="ed-footer-contact">
+        <li><a href="tel:14165550199">(416) 555-0199</a></li>
+        <li><a href="mailto:hello@clearspacejunk.ca">hello@clearspacejunk.ca</a></li>
+        <li>128 Bayview Ave, Toronto, ON M5A 3R2</li>
+        <li>Mon–Sat: 7am–8pm, Sun: 9am–5pm</li>
+      </ul>
+    </div>
+  </div>
+  <div class="ed-wrap ed-footer-bottom">
+    <span>© <span class="current-year">2026</span> ClearSpace Junk Removal.</span>
+    <span>Licensed &amp; Insured · WSIB Covered</span>
   </div>
 </footer>
 
