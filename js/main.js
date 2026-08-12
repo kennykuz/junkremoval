@@ -1,23 +1,26 @@
 // ClearSpace Junk Removal — site interactions
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Mobile nav toggle
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      document.body.classList.toggle('nav-open');
-    });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        document.body.classList.remove('nav-open');
+  // Mobile nav toggle (supports both the original nav and the v2 redesign nav)
+  [['.nav-toggle', '.nav-links'], ['.v2-nav-toggle', '.v2-nav-links']].forEach(([toggleSel, linksSel]) => {
+    const navToggle = document.querySelector(toggleSel);
+    const navLinks = document.querySelector(linksSel);
+    if (navToggle && navLinks) {
+      navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+        document.body.classList.toggle('nav-open');
       });
-    });
-  }
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          document.body.classList.remove('nav-open');
+        });
+      });
+    }
+  });
 
-  // Highlight active nav link based on current page
+  // Highlight active nav link based on current page (original nav only —
+  // the v2 redesign nav sets its active link directly in the markup)
   const current = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(a => {
     const href = a.getAttribute('href');
@@ -26,21 +29,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // FAQ accordion
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const q = item.querySelector('.faq-q');
-    const a = item.querySelector('.faq-a');
-    if (!q || !a) return;
-    q.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      item.closest('.faq').querySelectorAll('.faq-item.open').forEach(other => {
-        if (other !== item) {
-          other.classList.remove('open');
-          other.querySelector('.faq-a').style.maxHeight = null;
-        }
+  // FAQ accordion (supports both the original .faq-* and v2 .v2-faq-* markup)
+  [
+    { item: '.faq-item', group: '.faq', q: '.faq-q', a: '.faq-a' },
+    { item: '.v2-faq-item', group: '.v2-faq', q: '.v2-faq-q', a: '.v2-faq-a' },
+  ].forEach(({ item: itemSel, group: groupSel, q: qSel, a: aSel }) => {
+    document.querySelectorAll(itemSel).forEach(item => {
+      const q = item.querySelector(qSel);
+      const a = item.querySelector(aSel);
+      if (!q || !a) return;
+      q.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        item.closest(groupSel).querySelectorAll(`${itemSel}.open`).forEach(other => {
+          if (other !== item) {
+            other.classList.remove('open');
+            other.querySelector(aSel).style.maxHeight = null;
+          }
+        });
+        item.classList.toggle('open', !isOpen);
+        a.style.maxHeight = !isOpen ? a.scrollHeight + 'px' : null;
       });
-      item.classList.toggle('open', !isOpen);
-      a.style.maxHeight = !isOpen ? a.scrollHeight + 'px' : null;
     });
   });
 
@@ -84,6 +92,24 @@ document.addEventListener('DOMContentLoaded', () => {
         success.classList.add('show');
         success.scrollIntoView({ behavior: 'smooth', block: 'center' });
         setTimeout(() => success.classList.remove('show'), 7000);
+      }
+    });
+  }
+
+  // Mini request-a-service form (v2 homepage banner)
+  const miniForm = document.querySelector('#mini-quote-form');
+  if (miniForm) {
+    miniForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!miniForm.checkValidity()) {
+        miniForm.reportValidity();
+        return;
+      }
+      const success = document.querySelector('#mini-form-success');
+      miniForm.reset();
+      if (success) {
+        success.style.display = 'block';
+        setTimeout(() => { success.style.display = 'none'; }, 7000);
       }
     });
   }
