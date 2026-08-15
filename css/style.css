@@ -558,3 +558,36 @@ html.js .reveal.in{opacity:1;transform:none}
    that hasn't been supplied yet — visually distinct so it's never
    mistaken for a real claim) */
 .ph{border-bottom:1.5px dashed var(--accent);cursor:help}
+
+/* ============================================================
+   Photography layer
+   Every visual container holds an illustrated icon as its base.
+   A .photo image sits on top and covers it. Drop a real file at
+   the src path and the photograph takes over; if the file is
+   missing the image is removed at runtime (see js/main.js) and
+   the illustrated panel underneath shows instead, so the site
+   never renders a broken-image icon.
+   ============================================================ */
+/* The photograph simply covers the illustration beneath it, so the icon
+   never needs hiding — which keeps the panel correct before the image
+   loads, and if scripting is unavailable. */
+.photo{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;display:block;z-index:1;
+}
+.arch-frame,.hero-visual,.about-visual .frame,.team-photo,
+.blog-card .thumb,.detail-visual,.split-cta .visual,.ba-split div{position:relative;overflow:hidden}
+
+/* Keep foreground furniture above the photograph. */
+.hero-panel,.about-visual .float-card,.ba-split div span.tag{z-index:2}
+
+/* `has-photo` is set by js/main.js only once an image has actually
+   loaded, so these treatments never apply to an empty panel. */
+.ba-split div.has-photo span.tag{background:rgba(0,0,0,.55)}
+.hero-visual.has-photo::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(13,34,22,.74),rgba(13,34,22,.28));
+}
+.service-card:hover .arch-frame.has-photo,
+.blog-card:hover .thumb.has-photo{background:var(--surface-2)}
+.arch-frame.has-photo,.blog-card .thumb.has-photo{transition:none}

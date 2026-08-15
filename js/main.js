@@ -1,4 +1,22 @@
 // JunkMatter — site interactions
+
+// Photography layer. Each .photo sits over an illustrated panel and covers it
+// once loaded. If the image file isn't there yet the element is removed, so
+// the illustration below shows instead of a broken-image icon. Both listeners
+// are registered outside DOMContentLoaded and in the capture phase, because
+// load/error don't bubble and images can settle before the DOM is ready.
+document.addEventListener('error', (e) => {
+  const el = e.target;
+  if (el && el.tagName === 'IMG' && el.classList.contains('photo')) el.remove();
+}, true);
+
+document.addEventListener('load', (e) => {
+  const el = e.target;
+  if (el && el.tagName === 'IMG' && el.classList.contains('photo') && el.parentElement) {
+    el.parentElement.classList.add('has-photo');
+  }
+}, true);
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile nav toggle
