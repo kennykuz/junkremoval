@@ -419,13 +419,15 @@ strong,b{font-weight:700}
 /* Info panel (contact page) */
 .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:flex-start}
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
-.info-panel{background:var(--green-900);color:#fff;border-radius:var(--radius-lg);padding:36px}
-.info-panel h3{color:#fff;margin-bottom:22px}
-.info-panel li{display:flex;gap:14px;margin-bottom:22px;align-items:flex-start}
-.info-panel li .ic{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.info-panel li .ic svg{width:19px;height:19px;color:#7fd88c}
+.info-panel{background:var(--green-900);color:#fff;border-radius:var(--radius-lg);padding:38px 34px}
+.info-panel h3{color:#fff;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:#8fd39b;margin-bottom:26px}
+.info-panel li{display:flex;gap:14px;padding:18px 0;align-items:flex-start;border-bottom:1px solid rgba(255,255,255,.1)}
+.info-panel li:first-of-type{padding-top:0}
+.info-panel li .ic{display:flex;align-items:center;flex-shrink:0;margin-top:2px}
+.info-panel li .ic svg{width:19px;height:19px;color:#8fd39b}
 .info-panel li b{display:block;font-size:.92rem}
 .info-panel li span{font-size:.86rem;color:#a9bcae}
+.info-panel .ph{border-bottom-color:rgba(143,211,155,.6)}
 
 /* Blog */
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
