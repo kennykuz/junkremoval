@@ -1,54 +1,37 @@
-// ClearSpace Junk Removal — site interactions
+// JunkMatter — site interactions
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Mobile nav toggle (supports both the original nav and the editorial redesign nav)
-  [['.nav-toggle', '.nav-links'], ['.ed-nav-toggle', '.ed-nav-links']].forEach(([toggleSel, linksSel]) => {
-    const navToggle = document.querySelector(toggleSel);
-    const navLinks = document.querySelector(linksSel);
-    if (navToggle && navLinks) {
-      navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-        document.body.classList.toggle('nav-open');
+  // Mobile nav toggle
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      document.body.classList.toggle('nav-open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        document.body.classList.remove('nav-open');
       });
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('open');
-          document.body.classList.remove('nav-open');
-        });
-      });
-    }
-  });
+    });
+  }
 
-  // Highlight active nav link based on current page (original nav only —
-  // the editorial redesign nav sets its active link directly in the markup)
-  const current = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    const href = a.getAttribute('href');
-    if (href === current || (current === '' && href === 'index.html')) {
-      a.classList.add('active');
-    }
-  });
-
-  // FAQ accordion (supports both the original .faq-* and editorial .ed-faq-* markup)
-  [
-    { item: '.faq-item', group: '.faq', q: '.faq-q', a: '.faq-a' },
-    { item: '.ed-faq-item', group: '.ed-faq', q: '.ed-faq-q', a: '.ed-faq-a' },
-  ].forEach(({ item: itemSel, group: groupSel, q: qSel, a: aSel }) => {
-    document.querySelectorAll(itemSel).forEach(item => {
-      const q = item.querySelector(qSel);
-      const a = item.querySelector(aSel);
-      if (!q || !a) return;
-      q.addEventListener('click', () => {
-        const isOpen = item.classList.contains('open');
-        item.closest(groupSel).querySelectorAll(`${itemSel}.open`).forEach(other => {
-          if (other !== item) {
-            other.classList.remove('open');
-            other.querySelector(aSel).style.maxHeight = null;
-          }
-        });
-        item.classList.toggle('open', !isOpen);
-        a.style.maxHeight = !isOpen ? a.scrollHeight + 'px' : null;
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    if (!q || !a) return;
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      item.closest('.faq').querySelectorAll('.faq-item.open').forEach(other => {
+        if (other !== item) {
+          other.classList.remove('open');
+          other.querySelector('.faq-a').style.maxHeight = null;
+        }
       });
+      item.classList.toggle('open', !isOpen);
+      a.style.maxHeight = !isOpen ? a.scrollHeight + 'px' : null;
     });
   });
 
@@ -88,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const success = document.querySelector('#form-success');
       quoteForm.reset();
+      document.querySelectorAll('.upload-list').forEach(list => { list.innerHTML = ''; });
       if (success) {
         success.classList.add('show');
         success.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -96,27 +80,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Pricing volume estimator (pricing page)
-  const slider = document.querySelector('#volume-slider');
-  const sliderOutput = document.querySelector('#volume-output');
-  const sliderPrice = document.querySelector('#volume-price');
-  if (slider && sliderOutput && sliderPrice) {
-    const tiers = [
-      { max: 15, label: 'Minimum Load — a couch or a few bags', price: '$99–$149' },
-      { max: 35, label: 'Quarter Load — single furniture pieces', price: '$179–$249' },
-      { max: 55, label: 'Half Load — a room of furniture', price: '$299–$399' },
-      { max: 75, label: 'Three-Quarter Load — small apartment', price: '$429–$519' },
-      { max: 100, label: 'Full Load — full home or garage', price: '$549–$649' },
-    ];
-    const update = () => {
-      const val = Number(slider.value);
-      const tier = tiers.find(t => val <= t.max) || tiers[tiers.length - 1];
-      sliderOutput.textContent = tier.label;
-      sliderPrice.textContent = tier.price;
-    };
-    slider.addEventListener('input', update);
-    update();
+  // Newsletter form (footer)
+  const newsletterForm = document.querySelector('#newsletter-form');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const input = newsletterForm.querySelector('input');
+      const original = input.placeholder;
+      newsletterForm.reset();
+      input.placeholder = "Thanks — you're subscribed!";
+      setTimeout(() => { input.placeholder = original; }, 4000);
+    });
   }
+
+  // Photo upload field (quote form) — lists selected file names, no backend
+  document.querySelectorAll('.field-upload').forEach(dropzone => {
+    const input = dropzone.querySelector('input[type=file]');
+    const list = dropzone.parentElement.querySelector('.upload-list');
+    if (!input) return;
+    const renderFiles = (files) => {
+      if (!list) return;
+      list.innerHTML = '';
+      Array.from(files).slice(0, 8).forEach(file => {
+        const span = document.createElement('span');
+        span.textContent = file.name;
+        list.appendChild(span);
+      });
+    };
+    input.addEventListener('change', () => renderFiles(input.files));
+    dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('drag'); });
+    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag'));
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('drag');
+      if (e.dataTransfer.files.length) {
+        input.files = e.dataTransfer.files;
+        renderFiles(input.files);
+      }
+    });
+  });
 
   // Set current year in footer
   document.querySelectorAll('.current-year').forEach(el => {

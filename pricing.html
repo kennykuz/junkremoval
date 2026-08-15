@@ -4,216 +4,311 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pricing | JunkMatter</title>
-<meta name="description" content="Transparent, volume-based junk removal pricing from JunkMatter. See the price table, try the load estimator, and learn what's included — no hidden fees.">
+<meta name="description" content="JunkMatter pricing depends on volume, material type, location, accessibility, and labor required. Request a free, no-obligation quote — upload photos for a faster estimate.">
 <link rel="icon" href="data:,">
 <link rel="stylesheet" href="css/style.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
-<body class="ed">
+<body>
 
 <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
 <defs>
-<symbol id="icon-leaf-mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="1.5" width="29" height="29" rx="7"/><path d="M9 23C9 12 15 7 24 7C24 18 18 23 9 23Z"/><path d="M10.5 21.5C14 17.5 18 13.5 22.5 9"/></symbol>
-<symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></symbol>
-<symbol id="icon-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+<symbol id="icon-mark" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="1.5" y="1.5" width="29" height="29" rx="9"/><path d="M9 23C9 12 15 7 24 7C24 18 18 23 9 23Z"/><path d="M10.5 21.5C14 17.5 18 13.5 22.5 9"/></symbol>
 <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></symbol>
+<symbol id="icon-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+<symbol id="icon-facebook" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+<symbol id="icon-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l16 16M20 4L4 20"/></symbol>
+<symbol id="icon-linkedin" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6v6.2h-4v-5.5c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z"/></symbol>
+<symbol id="icon-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="icon-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></symbol>
+<symbol id="icon-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></symbol>
+<symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
+<symbol id="icon-ruler" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l14-14 4 4-14 14z"/><path d="M14 6l4 4"/><path d="M11 9l2 2"/><path d="M8 12l2 2"/><path d="M5 15l2 2"/></symbol>
+<symbol id="icon-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></symbol>
+<symbol id="icon-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 22V11l5-8a2 2 0 0 1 2 2v6h5.3a2 2 0 0 1 1.94 2.5l-1.65 6.5A2 2 0 0 1 17.65 22H7Z"/><path d="M7 22H4a1 1 0 0 1-1-1V12a1 1 0 0 1 1-1h3"/></symbol>
+<symbol id="icon-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+<symbol id="icon-upload" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
+<symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
 </defs>
 </svg>
 
-<header class="ed-header">
-  <div class="ed-header-inner">
-    <a href="index.html" class="ed-wordmark"><span class="mark"><svg><use href="#icon-leaf-mark"/></svg></span>JUNK<span class="accent">MATTER</span></a>
-    <nav class="ed-nav-links">
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-left">
+      <a href="tel:14165550143"><svg><use href="#icon-phone"/></svg> +1 (416) 555-0143</a>
+      <a href="mailto:info@junkmatter.ca"><svg><use href="#icon-mail"/></svg> info@junkmatter.ca</a>
+    </div>
+    <div class="topbar-social">
+      <a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"/></svg></a>
+      <a href="#" aria-label="X"><svg><use href="#icon-x"/></svg></a>
+      <a href="#" aria-label="LinkedIn"><svg><use href="#icon-linkedin"/></svg></a>
+      <a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <nav class="nav wrap">
+    <a href="index.html" class="brand">
+      <span class="mark"><svg><use href="#icon-mark"/></svg></span>
+      Junk<span class="accent">Matter</span>
+    </a>
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
-      <a href="pricing.html" class="active">Pricing</a>
       <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="blog.html">Blog</a>
+      <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-    </nav>
-    <div class="ed-nav-right">
-      <a href="tel:14165550199" class="ed-nav-phone">(416) 555-0199</a>
-      <a href="contact.html" class="ed-btn ed-btn-fill">Get A Quote <svg><use href="#icon-arrow-right"/></svg></a>
-      <button class="ed-nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
-  </div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-solid"><span class="label">Get A Free Quote</span><span class="ic"><svg><use href="#icon-arrow-up-right"/></svg></span></a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
 </header>
 
-<section class="ed-page-hero">
-  <div class="ed-wrap">
+<section class="page-hero">
+  <div class="wrap">
     <div class="crumb"><a href="index.html">Home</a> / Pricing</div>
-    <h1>What it costs, and why.</h1>
-    <p class="lead">We charge by how much space your junk takes up in the truck — not by weight, not by item count. The number is confirmed on-site before we start, not after.</p>
+    <h1>Pricing</h1>
+    <p class="lead">We don't post one-size-fits-all prices, because no two jobs are the same. Here's what actually determines your quote.</p>
   </div>
 </section>
 
-<section class="ed-section">
-  <div class="ed-wrap">
-    <span class="ed-kicker"><span class="n">01</span> Estimate Your Load</span>
-    <h2 class="ed-h2">How much space will it take up?</h2>
-    <div class="ed-estimator reveal" style="max-width:720px;margin-top:36px">
-      <input type="range" id="volume-slider" min="1" max="100" value="20">
-      <div class="ed-estimator-row">
-        <div>
-          <div class="label" id="volume-output">Quarter Load — single furniture pieces</div>
-          <div class="sub">Estimated price range</div>
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center;display:flex;text-align:center">What Determines Your Price</p>
+    <h2 style="text-align:center">Five factors go into every quote.</h2>
+    <p style="max-width:600px;margin:14px auto 0;text-align:center">Every job is different, so we price based on the actual work involved rather than a flat rate. Send us a few details (and photos, if you can) and we'll get back to you with a clear, upfront number.</p>
+
+    <div class="factor-grid" style="margin-top:44px">
+      <div class="factor-card reveal">
+        <span class="ic"><svg><use href="#icon-box"/></svg></span>
+        <h4>Volume Of Junk</h4>
+        <p>How much space your items take up in the truck — a single item versus a full load.</p>
+      </div>
+      <div class="factor-card reveal">
+        <span class="ic"><svg><use href="#icon-ruler"/></svg></span>
+        <h4>Type Of Materials</h4>
+        <p>General household junk, appliances, and construction debris are priced differently.</p>
+      </div>
+      <div class="factor-card reveal">
+        <span class="ic"><svg><use href="#icon-map-pin"/></svg></span>
+        <h4>Location</h4>
+        <p>Where the job is and how far it is from our service routes.</p>
+      </div>
+      <div class="factor-card reveal">
+        <span class="ic"><svg><use href="#icon-hand"/></svg></span>
+        <h4>Accessibility</h4>
+        <p>Stairs, elevators, and distance from your items to the truck all factor in.</p>
+      </div>
+      <div class="factor-card reveal">
+        <span class="ic"><svg><use href="#icon-clock"/></svg></span>
+        <h4>Labor Required</h4>
+        <p>How much lifting, sorting, and disposal work the job actually takes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section surface">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center;display:flex;text-align:center">How It Works</p>
+    <h2 style="text-align:center">Getting a quote takes minutes.</h2>
+    <div class="steps" style="margin-top:40px">
+      <div class="step reveal">
+        <span class="step-num">01</span>
+        <h4>Tell Us What's Going On</h4>
+        <p>Fill out the form below with a few details — and photos, if you have them.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-num">02</span>
+        <h4>Get Your Free Quote</h4>
+        <p>We'll review the details and follow up with a clear, no-obligation price.</p>
+      </div>
+      <div class="step reveal">
+        <span class="step-num">03</span>
+        <h4>We Haul It Away</h4>
+        <p>Once you're ready, we schedule a pickup that works for you and get it done.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="quote">
+  <div class="wrap" style="max-width:760px">
+    <div style="text-align:center;margin-bottom:36px">
+      <p class="eyebrow" style="justify-content:center;display:flex">Get Your Free Quote</p>
+      <h2>Request Your Free Estimate</h2>
+      <p style="margin-top:10px">Upload a few photos for the fastest, most accurate quote — or just describe what needs to go.</p>
+    </div>
+
+    <form class="form-card reveal" id="quote-form">
+      <div class="form-row">
+        <div class="field">
+          <label for="p-name">Full Name</label>
+          <input type="text" id="p-name" name="name" required autocomplete="name">
         </div>
-        <div class="amount" id="volume-price">$179–249</div>
+        <div class="field">
+          <label for="p-phone">Phone Number</label>
+          <input type="tel" id="p-phone" name="phone" required autocomplete="tel">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="p-email">Email Address</label>
+          <input type="email" id="p-email" name="email" required autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="p-service">Service Type</label>
+          <select id="p-service" name="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option>Residential Junk Removal</option>
+            <option>Commercial Junk Removal</option>
+            <option>Furniture Removal</option>
+            <option>Appliance Removal</option>
+            <option>Garage Cleanout</option>
+            <option>Basement / Attic Cleanout</option>
+            <option>Construction Debris Removal</option>
+            <option>Estate Cleanout</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="p-address">Address / Area</label>
+          <input type="text" id="p-address" name="address" placeholder="e.g. North York, ON" required>
+        </div>
+        <div class="field">
+          <label for="p-date">Preferred Pickup Date</label>
+          <input type="date" id="p-date" name="date">
+        </div>
+      </div>
+      <div class="field">
+        <label for="p-desc">Description Of Junk</label>
+        <textarea id="p-desc" name="description" placeholder="What needs to go? Rough quantity, item types, anything we should know."></textarea>
+      </div>
+      <div class="field">
+        <label>Upload Photos <span style="font-weight:400;color:var(--muted)">(optional, but helps us quote faster)</span></label>
+        <label class="field-upload">
+          <input type="file" accept="image/*" multiple>
+          <svg><use href="#icon-upload"/></svg>
+          <div>Click to upload or drag photos here</div>
+          <div class="hint">Up to 8 photos, JPG or PNG</div>
+        </label>
+        <div class="upload-list"></div>
+      </div>
+      <div class="field">
+        <label for="p-message">Message</label>
+        <textarea id="p-message" name="message" placeholder="Anything else we should know?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid btn-block"><span class="label">Request My Free Quote</span><span class="ic"><svg><use href="#icon-arrow-up-right"/></svg></span></button>
+      <div class="form-success" id="form-success">
+        <svg><use href="#icon-check"/></svg>
+        <div><b>Thanks — request received.</b> We'll be in touch shortly with your free quote.</div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section surface">
+  <div class="wrap faq-split">
+    <div>
+      <p class="eyebrow">Pricing FAQs</p>
+      <h2>Common questions about our pricing.</h2>
+      <p style="margin-top:14px;max-width:440px">Still have a pricing question? <a href="contact.html" class="text-link" style="display:inline-flex">Contact us <svg style="width:14px;height:14px"><use href="#icon-arrow-right"/></svg></a></p>
+      <div class="faq" style="margin-top:28px">
+        <div class="faq-item open">
+          <button class="faq-q">Is the quote really free? <span class="chev"><svg><use href="#icon-chevron-down"/></svg></span></button>
+          <div class="faq-a" style="max-height:200px"><p>Yes — quotes are always free with no obligation to book.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you charge a minimum fee? <span class="chev"><svg><use href="#icon-chevron-down"/></svg></span></button>
+          <div class="faq-a"><p>Pricing is based on the volume and type of items, which we'll walk you through when we provide your quote.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Are there any hidden fees? <span class="chev"><svg><use href="#icon-chevron-down"/></svg></span></button>
+          <div class="faq-a"><p>No — the price we quote is the price you pay, unless the scope of the job changes on site, which we'll always confirm with you first.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">What payment methods do you accept? <span class="chev"><svg><use href="#icon-chevron-down"/></svg></span></button>
+          <div class="faq-a"><p>Let us know your preferred payment method when you book and we'll confirm what's available in your area.</p></div>
+        </div>
       </div>
     </div>
+    <div class="detail-visual reveal" style="aspect-ratio:1"><svg><use href="#icon-camera"/></svg></div>
   </div>
 </section>
 
-<section class="ed-section rule-top">
-  <div class="ed-wrap">
-    <span class="ed-kicker"><span class="n">02</span> Full Price List</span>
-    <h2 class="ed-h2">Pricing by load size.</h2>
-    <table class="ed-price-table" style="margin-top:40px">
-      <thead>
-        <tr><th>Load Size</th><th>Truck Space</th><th>Typically Fits</th><th>Price</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Minimum Load</td><td>Up to 1/8</td><td>A couch, mattress, or a few bags</td><td class="price">$99–149</td></tr>
-        <tr><td>Quarter Load</td><td>1/4</td><td>Single room of small furniture</td><td class="price">$179–249</td></tr>
-        <tr><td>Half Load</td><td>1/2</td><td>Multiple rooms or a small garage</td><td class="price">$299–399</td></tr>
-        <tr><td>Three-Quarter Load</td><td>3/4</td><td>A studio or one-bedroom apartment</td><td class="price">$429–519</td></tr>
-        <tr><td>Full Load</td><td>Full truck</td><td>A full house, basement, or garage</td><td class="price">$549–649</td></tr>
-      </tbody>
-    </table>
-    <div class="ed-price-note reveal">
-      <span>Prices include labor, hauling, and standard disposal. A small additional fee may apply to items requiring specialized handling — mattresses, tires, e-waste, and appliances with refrigerant.</span>
-    </div>
-  </div>
-</section>
-
-<section class="ed-section rule-top">
-  <div class="ed-wrap">
-    <span class="ed-kicker"><span class="n">03</span> What's Included</span>
-    <h2 class="ed-h2">Every job includes.</h2>
-    <div class="ed-pricing-compare reveal" style="margin-top:40px">
+<footer>
+  <div class="footer-top">
+    <div class="wrap">
       <div>
-        <span class="tag">Standard Pickup</span>
-        <h3>From</h3>
-        <div class="amount">$99</div>
-        <ul>
-          <li>Free, no-obligation on-site quote</li>
-          <li>Labor &amp; loading included</li>
-          <li>Standard disposal fees included</li>
-          <li>Broom-clean sweep up</li>
-        </ul>
-        <a href="contact.html" class="ed-text-link">Get this quote <svg><use href="#icon-arrow-right"/></svg></a>
+        <h4>Subscribe To Our Newsletter</h4>
+        <p>Get seasonal cleanup tips and service updates.</p>
       </div>
-      <div>
-        <span class="tag">Most Booked — Full Load / Cleanout</span>
-        <h3>Range</h3>
-        <div class="amount">$549<span>–649</span></div>
-        <ul>
-          <li>Everything in Standard Pickup</li>
-          <li>Multi-room or full-property hauling</li>
-          <li>Donation &amp; recycling sorting</li>
-          <li>Flexible same-day scheduling</li>
-        </ul>
-        <a href="contact.html" class="ed-text-link">Get this quote <svg><use href="#icon-arrow-right"/></svg></a>
-      </div>
-      <div>
-        <span class="tag">Commercial &amp; Recurring</span>
-        <h3>Custom</h3>
-        <div class="amount">Quote</div>
-        <ul>
-          <li>Volume-discounted recurring pickups</li>
-          <li>Dedicated account contact</li>
-          <li>After-hours &amp; weekend scheduling</li>
-          <li>Invoicing &amp; monthly billing</li>
-        </ul>
-        <a href="contact.html" class="ed-text-link">Talk to sales <svg><use href="#icon-arrow-right"/></svg></a>
-      </div>
+      <form class="newsletter-form" id="newsletter-form">
+        <input type="email" placeholder="Email Address" required aria-label="Email address">
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
   </div>
-</section>
-
-<section class="ed-section rule-top" id="faq">
-  <div class="ed-wrap">
-    <span class="ed-kicker"><span class="n">04</span> Pricing FAQ</span>
-    <h2 class="ed-h2">Questions about cost.</h2>
-    <div class="ed-faq reveal" style="margin-top:40px;max-width:760px">
-      <div class="ed-faq-item open">
-        <button class="ed-faq-q">Is the quote really free? <svg><use href="#icon-plus"/></svg></button>
-        <div class="ed-faq-a" style="max-height:200px"><p>Yes — every estimate is completely free with no obligation. If you decide not to go ahead after seeing the price, there's no charge and no pressure.</p></div>
-      </div>
-      <div class="ed-faq-item">
-        <button class="ed-faq-q">Are there any hidden fees? <svg><use href="#icon-plus"/></svg></button>
-        <div class="ed-faq-a"><p>No. The price you approve on-site is the price you pay. The only exceptions are items that require specialized disposal, which carry a small, clearly disclosed fee.</p></div>
-      </div>
-      <div class="ed-faq-item">
-        <button class="ed-faq-q">Do you charge for large or heavy items? <svg><use href="#icon-plus"/></svg></button>
-        <div class="ed-faq-a"><p>Large items are priced by the truck space they occupy, same as everything else — not by weight. A piano may land in a higher tier because of the space and labor required, not because it's heavy.</p></div>
-      </div>
-      <div class="ed-faq-item">
-        <button class="ed-faq-q">Do you offer discounts? <svg><use href="#icon-plus"/></svg></button>
-        <div class="ed-faq-a"><p>We offer volume discounts for recurring commercial service and reduced rates for verified donation-only loads. Ask your quote specialist about current promotions.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="ed-section" style="background:var(--ed-accent);color:var(--ed-white)">
-  <div class="ed-wrap ed-cta">
-    <h2 style="color:var(--ed-white)">Get your exact<br>price today.</h2>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-      <a href="contact.html" class="ed-btn" style="background:var(--ed-white);border-color:var(--ed-white);color:var(--ed-accent)">Get A Free Quote <svg><use href="#icon-arrow-right"/></svg></a>
-      <a href="tel:14165550199" class="ed-btn ed-btn-outline-paper" style="color:var(--ed-white)">Call (416) 555-0199</a>
-    </div>
-  </div>
-</section>
-
-<footer class="ed-footer">
-  <div class="ed-wrap ed-footer-grid">
-    <div class="ed-footer-brand">
-      <a href="index.html" class="ed-wordmark"><span class="mark"><svg><use href="#icon-leaf-mark"/></svg></span>JUNK<span class="accent">MATTER</span></a>
-      <p>Junk removal for homes and businesses across the Greater Toronto Area, on the road since 2014.</p>
-      <p class="ed-footer-tagline">We Haul. You Relax.</p>
-      <div class="ed-footer-social">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="brand"><span class="mark"><svg><use href="#icon-mark"/></svg></span>Junk<span class="accent">Matter</span></a>
+      <p>Fast, friendly junk removal for homes and businesses across the Greater Toronto Area.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><svg><use href="#icon-facebook"/></svg></a>
+        <a href="#" aria-label="X"><svg><use href="#icon-x"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg><use href="#icon-linkedin"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg><use href="#icon-instagram"/></svg></a>
       </div>
     </div>
     <div>
-      <h4>Site</h4>
-      <div class="ed-footer-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </div>
-    <div>
-      <h4>Services</h4>
-      <div class="ed-footer-links">
-        <a href="services.html#residential">Residential</a>
-        <a href="services.html#commercial">Commercial</a>
-        <a href="services.html#estate">Estate Cleanouts</a>
+      <h4>Our Services</h4>
+      <div class="footer-links">
+        <a href="service-residential.html">Residential Junk Removal</a>
+        <a href="services.html#commercial">Commercial Junk Removal</a>
+        <a href="services.html#furniture">Furniture Removal</a>
+        <a href="services.html#appliance">Appliance Removal</a>
         <a href="services.html#construction">Construction Debris</a>
       </div>
     </div>
     <div>
-      <h4>Contact</h4>
-      <ul class="ed-footer-contact">
-        <li><a href="tel:14165550199">(416) 555-0199</a></li>
-        <li><a href="mailto:hello@junkmatter.ca">hello@junkmatter.ca</a></li>
-        <li>128 Bayview Ave, Toronto, ON M5A 3R2</li>
-        <li>Mon–Sat: 7am–8pm, Sun: 9am–5pm</li>
+      <h4>Quick Links</h4>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="projects.html">Projects</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+      </div>
+    </div>
+    <div>
+      <h4>Contact Info</h4>
+      <ul class="footer-contact">
+        <li><svg><use href="#icon-map-pin"/></svg> Toronto, ON, Canada</li>
+        <li><svg><use href="#icon-phone"/></svg> <a href="tel:14165550143">+1 (416) 555-0143</a></li>
+        <li><svg><use href="#icon-mail"/></svg> <a href="mailto:info@junkmatter.ca">info@junkmatter.ca</a></li>
       </ul>
     </div>
   </div>
-  <div class="ed-wrap ed-footer-bottom">
-    <span>© <span class="current-year">2026</span> JunkMatter.</span>
-    <span>Licensed &amp; Insured · WSIB Covered</span>
+  <div class="wrap footer-bottom">
+    <span>Copyright © <span class="current-year">2026</span> JunkMatter. All Rights Reserved.</span>
+    <span><a href="#">Terms &amp; Conditions</a> · <a href="#">Privacy Policy</a></span>
   </div>
 </footer>
 
 <div class="mobile-call-bar">
   <span>Need junk gone today?</span>
-  <a href="tel:14165550199"><svg><use href="#icon-phone"/></svg> Call Now</a>
+  <a href="tel:14165550143"><svg><use href="#icon-phone"/></svg> Call Now</a>
 </div>
 
 <button class="back-top" aria-label="Back to top"><svg style="transform:rotate(-90deg)"><use href="#icon-arrow-right"/></svg></button>
