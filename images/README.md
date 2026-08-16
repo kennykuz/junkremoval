@@ -27,6 +27,23 @@ time and the site stays presentable throughout.
 
 ## Files
 
+
+### Brand assets
+
+These are the slots your existing marketing banner and logo fit into.
+Unlike the photo slots, these are **not** cropped into page layouts — a
+graphic with text baked in belongs here and nowhere else on the site.
+
+| Path | Size | What it is |
+|---|---|---|
+| `images/social-banner.jpg` | 1200×630 | The share/link-preview image. Your marketing banner (logo + headline + CTA) is exactly right here — link previews have no layout of their own, so baked-in text is a feature. Shown when the site is shared on Facebook, LinkedIn, WhatsApp, iMessage, Slack, X. |
+| `images/favicon.png` | 512×512 | Browser tab icon. Crop the leaf-and-truck mark out of the logo — square, no wordmark, it renders at 16px. |
+| `images/apple-touch-icon.png` | 180×180 | Icon when someone saves the site to an iPhone home screen. Same mark, with a little padding. |
+
+**Do not** put the marketing banner into `hero.jpg` or any service slot.
+Those images sit *behind* the site's own headlines and buttons, so a
+banner with its own headline and CTA would collide with them.
+
 ### Hero & feature images
 
 | Path | Display size | Used on |
@@ -111,8 +128,9 @@ time and the site stays presentable throughout.
 If you are sourcing photos gradually, this order gives the biggest
 visual return first:
 
-1. `hero.jpg` — the first thing every visitor sees
-2. `services/*.jpg` (8) — the main grid on the home and services pages
-3. `about/crew.jpg` — used on both the home and about pages
-4. `projects/*` — real before/after shots are the strongest proof you have
-5. `about/team-*.jpg`, `blog/*.jpg`, then the rest
+1. `social-banner.jpg` + `favicon.png` — brand assets you already have
+2. `hero.jpg` — the first thing every visitor sees
+3. `services/*.jpg` (8) — the main grid on the home and services pages
+4. `about/crew.jpg` — used on both the home and about pages
+5. `projects/*` — real before/after shots are the strongest proof you have
+6. `about/team-*.jpg`, `blog/*.jpg`, then the rest
