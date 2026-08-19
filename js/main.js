@@ -17,6 +17,17 @@ document.addEventListener('load', (e) => {
   }
 }, true);
 
+// A cached or data-URI image can finish decoding before the listeners above
+// are attached, so its load/error event is never observed. Sweep once the DOM
+// is ready to catch anything that already settled.
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img.photo').forEach((img) => {
+    if (!img.complete) return;
+    if (img.naturalWidth > 0) img.parentElement?.classList.add('has-photo');
+    else img.remove();
+  });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile nav toggle
