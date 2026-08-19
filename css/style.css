@@ -584,10 +584,15 @@ html.js .reveal.in{opacity:1;transform:none}
 /* `has-photo` is set by js/main.js only once an image has actually
    loaded, so these treatments never apply to an empty panel. */
 .ba-split div.has-photo span.tag{background:rgba(0,0,0,.55)}
+/* Concentrated at the seam with the text panel and fading fast, so the
+   photograph's subject stays readable instead of sitting under a wash. */
 .hero-visual.has-photo::after{
   content:"";position:absolute;inset:0;z-index:1;
-  background:linear-gradient(90deg,rgba(13,34,22,.74),rgba(13,34,22,.28));
+  background:linear-gradient(90deg,rgba(13,34,22,.78) 0%,rgba(13,34,22,.30) 22%,rgba(13,34,22,.06) 55%,rgba(13,34,22,.10) 100%);
 }
+/* The crew sit left of centre in the frame; nudging the window keeps them
+   clear of the seam once the panel crops to a portrait-ish box. */
+.hero-visual .photo{object-position:42% center}
 .service-card:hover .arch-frame.has-photo,
 .blog-card:hover .thumb.has-photo{background:var(--surface-2)}
 .arch-frame.has-photo,.blog-card .thumb.has-photo{transition:none}
