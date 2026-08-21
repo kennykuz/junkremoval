@@ -257,8 +257,10 @@ strong,b{font-weight:700}
 .about-visual{position:relative}
 .about-visual .frame{border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:1/1;background:var(--green-800);display:flex;align-items:center;justify-content:center}
 .about-visual .frame svg{width:30%;height:30%;color:rgba(255,255,255,.8)}
+/* Sits over whatever photograph is dropped in, so the band carries enough
+   weight on its own rather than relying on the image behind it. */
 .about-visual .float-card{
-  position:absolute;left:0;right:0;bottom:0;background:rgba(8,20,12,.62);backdrop-filter:blur(3px);
+  position:absolute;left:0;right:0;bottom:0;background:rgba(8,20,12,.78);backdrop-filter:blur(4px);
   border-top:1px solid rgba(255,255,255,.16);padding:18px 22px;
   display:flex;gap:13px;align-items:center;
 }
@@ -590,9 +592,9 @@ html.js .reveal.in{opacity:1;transform:none}
   content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(90deg,rgba(13,34,22,.78) 0%,rgba(13,34,22,.30) 22%,rgba(13,34,22,.06) 55%,rgba(13,34,22,.10) 100%);
 }
-/* The crew sit left of centre in the frame; nudging the window keeps them
-   clear of the seam once the panel crops to a portrait-ish box. */
-.hero-visual .photo{object-position:42% center}
+/* The crew sit just right of centre in the frame, which already clears the
+   seam once the panel crops to a portrait-ish box. */
+.hero-visual .photo{object-position:54% center}
 .service-card:hover .arch-frame.has-photo,
 .blog-card:hover .thumb.has-photo{background:var(--surface-2)}
 .arch-frame.has-photo,.blog-card .thumb.has-photo{transition:none}
