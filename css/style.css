@@ -55,7 +55,12 @@ body{
   line-height:1.65;
   -webkit-font-smoothing:antialiased;
 }
+/* height:auto keeps an image's aspect ratio from its width/height attributes.
+   Without it, an image whose width is constrained by a parent keeps its full
+   intrinsic height and stretches. Anything needing a fixed height (.photo)
+   overrides this with a class selector. */
 img,svg{max-width:100%;display:block}
+img{height:auto}
 a{color:inherit;text-decoration:none}
 ul{list-style:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
