@@ -180,6 +180,12 @@ strong,b{font-weight:700}
   .nav-links.open{right:0}
   .nav-toggle{display:flex}
   body.nav-open::before{content:"";position:fixed;inset:0;background:rgba(15,40,24,.5);z-index:190}
+  /* .site-header is sticky with a z-index, so it opens a stacking context and
+     the drawer's z-index is resolved inside it — leaving the whole drawer at
+     the header's level, underneath the scrim. Lifting the header above the
+     scrim while the menu is open is what actually puts the links on top. */
+  body.nav-open .site-header{z-index:200}
+  body.nav-open{overflow:hidden}
 }
 @media(max-width:520px){.nav-cta .btn-solid span.label{display:none}.nav-cta .btn-solid{padding:8px}}
 
