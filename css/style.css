@@ -317,7 +317,17 @@ strong,b{font-weight:700}
 @media(max-width:900px){.project-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.project-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
 .project-card{background:none}
-.ba-split{display:flex;aspect-ratio:4/3;border-radius:var(--radius-md);overflow:hidden}
+/* Square tiles: the supplied before/after photographs are 1:1 with their
+   labels near the top edge, so a wider crop would cut them off. The
+   illustrated split uses the same ratio to keep rows even. */
+.ba-split{display:flex;aspect-ratio:1;border-radius:var(--radius-md);overflow:hidden}
+/* One photograph that already contains its own before/after split and
+   labels — the overlay tags would only duplicate them. */
+.ba-photo{
+  position:relative;overflow:hidden;aspect-ratio:1;border-radius:var(--radius-md);
+  background:var(--surface-2);display:flex;align-items:center;justify-content:center;
+}
+.ba-photo svg{width:22%;height:22%;color:var(--accent-dark)}
 .ba-split div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#fff;position:relative}
 .ba-split div span.tag{position:absolute;top:10px;left:10px;font-family:var(--font-display);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;background:rgba(0,0,0,.28);padding:4px 10px;border-radius:var(--radius-pill)}
 .ba-split .before{background:repeating-linear-gradient(135deg,#6b7568,#6b7568 10px,#5c6656 10px,#5c6656 20px)}
