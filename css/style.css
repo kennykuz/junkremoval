@@ -152,8 +152,11 @@ strong,b{font-weight:700}
 .site-header{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;gap:20px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:800;font-size:1.35rem;color:var(--ink)}
-.brand .mark{width:42px;height:42px;border-radius:12px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.brand .mark svg{width:24px;height:24px}
+/* The brand mark is the truck glyph lifted from the JunkMatter logo. It is
+   green on transparent, so it sits directly on the header rather than inside
+   a coloured tile. The footer uses a reversed (white) copy of the same glyph. */
+.brand .mark{height:40px;display:flex;align-items:center;flex-shrink:0}
+.brand .mark img{height:40px;width:auto;display:block}
 .brand .accent{color:var(--accent)}
 .nav-links{display:flex;gap:22px;align-items:center}
 .nav-links a{font-weight:600;font-size:.92rem;color:var(--ink-soft);position:relative;padding:6px 0;white-space:nowrap}
@@ -528,6 +531,10 @@ footer{background:var(--green-900);color:#a9bcae}
 @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.footer-grid{grid-template-columns:1fr}}
 .footer-brand .brand{color:#fff}
+/* The logo has no reversed variant and its darker greens vanish against the
+   footer, so the mark sits on a white tile here rather than being recoloured. */
+.footer-brand .brand .mark{background:#fff;border-radius:9px;padding:4px 7px;height:auto}
+.footer-brand .brand .mark img{height:30px}
 .footer-brand p{margin-top:14px;font-size:.88rem;max-width:280px}
 .footer-social{display:flex;gap:10px;margin-top:20px}
 .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center}

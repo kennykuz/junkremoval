@@ -30,15 +30,25 @@ time and the site stays presentable throughout.
 
 ### Brand assets
 
-These are the slots your existing marketing banner and logo fit into.
-Unlike the photo slots, these are **not** cropped into page layouts — a
-graphic with text baked in belongs here and nowhere else on the site.
+All of these are derived from `images/junk matter logo.png`, the supplied
+logo. Unlike the photo slots, they are **not** cropped into page layouts —
+a graphic with text baked in belongs here and nowhere else on the site.
 
 | Path | Size | What it is |
 |---|---|---|
-| `images/social-banner.jpg` | 1200×630 | The share/link-preview image. Your marketing banner (logo + headline + CTA) is exactly right here — link previews have no layout of their own, so baked-in text is a feature. Shown when the site is shared on Facebook, LinkedIn, WhatsApp, iMessage, Slack, X. |
-| `images/favicon.png` | 512×512 | Browser tab icon. Crop the leaf-and-truck mark out of the logo — square, no wordmark, it renders at 16px. |
-| `images/apple-touch-icon.png` | 180×180 | Icon when someone saves the site to an iPhone home screen. Same mark, with a little padding. |
+| `images/junk matter logo.png` | 195×170 | **The source file.** Everything below is generated from it. Replace this and regenerate the rest. |
+| `images/logo-mark.png` | 366×240 | The truck-and-leaf glyph on transparency, used as the brand mark in every header and footer. |
+| `images/logo.png` | 420×432 | The full stacked lockup (glyph + wordmark + tagline) on transparency. |
+| `images/social-banner.jpg` | 1200×630 | The share/link-preview image — the lockup centred on white. Shown when the site is shared on Facebook, LinkedIn, WhatsApp, iMessage, Slack, X. |
+| `images/favicon.png` | 64×64 | Browser tab icon — the glyph on white, no wordmark, since it renders at 16px. |
+| `images/apple-touch-icon.png` | 180×180 | Icon when someone saves the site to an iPhone home screen. Same glyph, with padding. |
+
+The supplied logo carries a baked-in white background and only about
+105×108 pixels of actual artwork, so the background was flood-filled to
+transparency and the glyph upscaled. **A larger export — SVG, or PNG at
+1000px or more — would sharpen every asset above.** The tagline line in
+particular is only 7px tall in the source and is unusable at any size on
+screen; it survives only in `logo.png` and the social banner.
 
 **Do not** put the marketing banner into `hero.jpg` or any service slot.
 Those images sit *behind* the site's own headlines and buttons, so a
