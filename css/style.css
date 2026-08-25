@@ -413,34 +413,16 @@ strong,b{font-weight:700}
 .faq-cta p{font-size:.88rem;margin-bottom:14px}
 
 /* Quote / contact form */
-.form-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:38px}
-@media(max-width:560px){.form-card{padding:26px 22px}}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px}
-@media(max-width:560px){.form-row{grid-template-columns:1fr}}
-.field{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
-.field label{font-size:.86rem;font-weight:700;color:var(--ink)}
-.field input,.field select,.field textarea{
-  padding:13px 16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);
-  transition:border-color var(--transition),background var(--transition);
-}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:#fff}
-.field textarea{resize:vertical;min-height:110px}
-.field-upload{
-  border:1.5px dashed var(--border);border-radius:var(--radius-sm);padding:22px;text-align:center;background:var(--surface);
-  cursor:pointer;transition:border-color var(--transition),background var(--transition);
-}
-.field-upload:hover,.field-upload.drag{border-color:var(--accent);background:var(--accent-light)}
-.field-upload svg{width:26px;height:26px;color:var(--accent-dark);margin:0 auto 10px}
-.field-upload .hint{font-size:.8rem;color:var(--muted);margin-top:4px}
-.field-upload input[type=file]{display:none}
-.upload-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.upload-list span{background:var(--accent-light);color:var(--accent-dark);font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:var(--radius-pill)}
-.form-success{
-  display:none;align-items:center;gap:12px;background:var(--accent-light);border:1px solid var(--accent);
-  color:var(--accent-dark);padding:16px 18px;border-radius:var(--radius-sm);margin-bottom:20px;font-weight:600;font-size:.92rem;
-}
-.form-success.show{display:flex}
-.form-success svg{width:22px;height:22px;flex-shrink:0}
+/* The quote form is a Zoho Forms embed (Canadian data centre), so its fields
+   are styled by Zoho, not here. Only the frame around the iframe is ours.
+   A fixed height is used because the iframe is cross-origin and cannot report
+   its own content height; it is generous so the form never scrolls inside
+   itself, which is miserable on a phone. */
+.zoho-form{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:10px}
+.zoho-form iframe{width:100%;height:1180px;border:0;display:block;background:#fff;border-radius:var(--radius-md)}
+@media(max-width:720px){.zoho-form{padding:6px}.zoho-form iframe{height:1460px}}
+.zoho-fallback{font-size:.84rem;color:var(--muted);text-align:center;padding:14px 10px 6px;margin:0}
+.zoho-fallback a{color:var(--accent-dark);font-weight:600;text-decoration:underline}
 
 /* Info panel (contact page) */
 .contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:flex-start}

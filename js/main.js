@@ -103,25 +103,8 @@ document.addEventListener('DOMContentLoaded', () => {
     backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   }
 
-  // Quote / contact form handling (client-side only — no backend configured)
-  const quoteForm = document.querySelector('#quote-form');
-  if (quoteForm) {
-    quoteForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (!quoteForm.checkValidity()) {
-        quoteForm.reportValidity();
-        return;
-      }
-      const success = document.querySelector('#form-success');
-      quoteForm.reset();
-      document.querySelectorAll('.upload-list').forEach(list => { list.innerHTML = ''; });
-      if (success) {
-        success.classList.add('show');
-        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(() => success.classList.remove('show'), 7000);
-      }
-    });
-  }
+  // The quote form is a Zoho Forms embed now, so submission, validation and
+  // photo uploads are all handled inside the iframe. Nothing to wire up here.
 
   // Newsletter form (footer)
   const newsletterForm = document.querySelector('#newsletter-form');
@@ -135,33 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => { input.placeholder = original; }, 4000);
     });
   }
-
-  // Photo upload field (quote form) — lists selected file names, no backend
-  document.querySelectorAll('.field-upload').forEach(dropzone => {
-    const input = dropzone.querySelector('input[type=file]');
-    const list = dropzone.parentElement.querySelector('.upload-list');
-    if (!input) return;
-    const renderFiles = (files) => {
-      if (!list) return;
-      list.innerHTML = '';
-      Array.from(files).slice(0, 8).forEach(file => {
-        const span = document.createElement('span');
-        span.textContent = file.name;
-        list.appendChild(span);
-      });
-    };
-    input.addEventListener('change', () => renderFiles(input.files));
-    dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.classList.add('drag'); });
-    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag'));
-    dropzone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropzone.classList.remove('drag');
-      if (e.dataTransfer.files.length) {
-        input.files = e.dataTransfer.files;
-        renderFiles(input.files);
-      }
-    });
-  });
 
   // Set current year in footer
   document.querySelectorAll('.current-year').forEach(el => {

@@ -25,7 +25,7 @@
 <link rel="icon" href="images/favicon.png" sizes="any">
 <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <link rel="canonical" href="https://www.junkmatter.com/contact.html">
-<link rel="stylesheet" href="css/style.css?v=6d075e6a">
+<link rel="stylesheet" href="css/style.css?v=54eb5e93">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -125,73 +125,16 @@
       </div>
     </div>
 
-    <form class="form-card reveal" id="quote-form">
-      <div class="form-row">
-        <div class="field">
-          <label for="c-name">Full Name</label>
-          <input type="text" id="c-name" name="name" required autocomplete="name">
-        </div>
-        <div class="field">
-          <label for="c-phone">Phone Number</label>
-          <input type="tel" id="c-phone" name="phone" required autocomplete="tel">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="field">
-          <label for="c-email">Email Address</label>
-          <input type="email" id="c-email" name="email" required autocomplete="email">
-        </div>
-        <div class="field">
-          <label for="c-service">Service Type</label>
-          <select id="c-service" name="service" required>
-            <option value="" disabled selected>Select a service</option>
-            <option>Residential Junk Removal</option>
-            <option>Commercial Junk Removal</option>
-            <option>Furniture Removal</option>
-            <option>Appliance Removal</option>
-            <option>Garage Cleanout</option>
-            <option>Basement / Attic Cleanout</option>
-            <option>Construction Debris Removal</option>
-            <option>Estate Cleanout</option>
-            <option>Other / Not Sure</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="field">
-          <label for="c-address">Address / Area</label>
-          <input type="text" id="c-address" name="address" placeholder="e.g. North York, ON" required>
-        </div>
-        <div class="field">
-          <label for="c-date">Preferred Pickup Date</label>
-          <input type="date" id="c-date" name="date">
-        </div>
-      </div>
-      <div class="field">
-        <label for="c-desc">Description Of Junk</label>
-        <textarea id="c-desc" name="description" placeholder="What needs to go? Rough quantity, item types, anything we should know."></textarea>
-      </div>
-      <div class="field">
-        <label>Upload Photos <span style="font-weight:400;color:var(--muted)">(optional, but helps us quote faster)</span></label>
-        <label class="field-upload">
-          <input type="file" accept="image/*" multiple>
-          <svg><use href="#icon-upload"/></svg>
-          <div>Click to upload or drag photos here</div>
-          <div class="hint">Up to 8 photos, JPG or PNG</div>
-        </label>
-        <div class="upload-list"></div>
-      </div>
-      <div class="field">
-        <label for="c-message">Message</label>
-        <textarea id="c-message" name="message" placeholder="Anything else we should know?"></textarea>
-      </div>
-      <button type="submit" class="btn btn-solid btn-block"><span class="label">Request My Free Quote</span><span class="ic"><svg><use href="#icon-arrow-up-right"/></svg></span></button>
-      <div class="form-success" id="form-success">
-        <svg><use href="#icon-check"/></svg>
-        <div><b>Thanks — request received.</b> We'll be in touch shortly with your free quote.</div>
-      </div>
-    </form>
-
+    <div class="zoho-form reveal">
+      <iframe src="https://forms.zohocloud.ca/junkmatter1/form/Junkmattercustomerquote"
+              title="JunkMatter free quote request form"
+              loading="lazy"></iframe>
+      <p class="zoho-fallback">
+        Form not loading? <a href="https://forms.zohocloud.ca/junkmatter1/form/Junkmattercustomerquote" target="_blank" rel="noopener">Open it in a new tab</a>,
+        or call <a href="tel:14165550143">+1 (416) 555-0143</a> or email
+        <a href="mailto:info@junkmatter.com">info@junkmatter.com</a>.
+      </p>
+    </div>
   </div>
 </section>
 
@@ -262,6 +205,6 @@
 
 <button class="back-top" aria-label="Back to top"><svg style="transform:rotate(-90deg)"><use href="#icon-arrow-right"/></svg></button>
 
-<script src="js/main.js?v=3948a577"></script>
+<script src="js/main.js?v=ecc034a5"></script>
 </body>
 </html>
